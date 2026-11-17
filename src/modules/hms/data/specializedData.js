@@ -1,0 +1,112 @@
+// Static reference data (departments shown on the Dashboard). Live data comes from the API.
+export const AYURVEDIC_DEPARTMENTS = [
+  {
+    id: 'dept-shalya',
+    sanskritName: 'Shalya Tantra',
+    englishName: 'Ayurvedic Surgery & Parasurgical Care',
+    shortCode: 'SHALYA',
+    hodName: 'Dr. Akhilesh Tripathi, MS (Ayu) Shalya',
+    activeCasesCount: 18,
+    coreProcedures: [
+      'Kshara Sutra Ligation (Fistula & Piles)',
+      'Kshara Karma (Chemical Cautery)',
+      'Agnikarma (Thermal Micro-Cautery for Calcaneal Spur & Sciatica)',
+      'Siravedha (Venesection Bloodletting)',
+      'Jalaukavacharana (Hirudotherapy / Leech Therapy)',
+    ],
+    opdTimings: '09:00 AM - 01:00 PM & 04:00 PM - 07:00 PM',
+    description:
+      'Specializes in minimally invasive, non-recurrence management of anorectal diseases (Piles, Fistula-in-Ano, Fissure) and chronic musculoskeletal pain.',
+  },
+  {
+    id: 'dept-panchakarma',
+    sanskritName: 'Panchakarma',
+    englishName: 'Bio-Purification & Detoxification',
+    shortCode: 'PK-DEPT',
+    hodName: 'Dr. K. N. Namboodiri, BAMS, MD (Ayu)',
+    activeCasesCount: 24,
+    coreProcedures: [
+      'Vamana Karma (Therapeutic Emesis)',
+      'Virechana Karma (Purgation)',
+      'Basti Chikitsa (Anuvasana & Niruha)',
+      'Nasya Karma (Errhine Therapy)',
+      'Raktamokshana (Bloodletting)',
+      'Shirodhara & Takradhara',
+      'Janu / Kati / Greeva Basti',
+    ],
+    opdTimings: '08:00 AM - 08:00 PM (Round-the-Clock Therapy Suites)',
+    description:
+      'NABH-accredited Panchakarma suites for chronic neuromuscular, autoimmune, and metabolic purification under strict Vaidya supervision.',
+  },
+  {
+    id: 'dept-kaya',
+    sanskritName: 'Kayachikitsa',
+    englishName: 'Ayurvedic Internal Medicine',
+    shortCode: 'KAYA',
+    hodName: 'Dr. Radhika Sharma, BAMS, MD (Ayu)',
+    activeCasesCount: 42,
+    coreProcedures: [
+      'Nadi Pariksha (Radial Pulse Diagnostics)',
+      'Deepana-Pachana (Metabolic Fire Ignition)',
+      'Rasayana Rejuvenation Regimens',
+      'Samshamana (Dosha Equilibrium Formulation)',
+      'Pathya-Apathya Ahara Prescription',
+    ],
+    opdTimings: '09:00 AM - 02:00 PM & 05:00 PM - 08:30 PM',
+    description:
+      'Core consultation department treating diabetes (Prameha), gastrointestinal disorders, hypertension, rheumatoid arthritis, and liver disorders.',
+  },
+  {
+    id: 'dept-shalakya',
+    sanskritName: 'Shalakya Tantra',
+    englishName: 'Ophthalmology & ENT (Urdhwanga Roga)',
+    shortCode: 'SHALAKYA',
+    hodName: 'Dr. Priya N. Menon, MS (Ayu) Shalakya',
+    activeCasesCount: 14,
+    coreProcedures: [
+      'Netra Tarpana (Medicated Ghee Eye Bath)',
+      'Aschyotana (Herbal Eye Drops)',
+      'Karnapoorana (Ear Oiling)',
+      'Kavala & Gandusha (Oral Gargling/Oil Pulling)',
+      'Dhoomapana (Therapeutic Herbal Smoke Inhalation)',
+    ],
+    opdTimings: '10:00 AM - 01:30 PM',
+    description:
+      'Focuses on dry eye syndrome, computer vision strain, chronic sinusitis, migraine, tinnitus, and macular degeneration.',
+  },
+  {
+    id: 'dept-stri-roga',
+    sanskritName: 'Stri Roga',
+    englishName: 'Ayurvedic Gynecology & Obstetrics',
+    shortCode: 'STRI',
+    hodName: 'Dr. Sunita Warrier, MS (Ayu) Prasuti',
+    activeCasesCount: 21,
+    coreProcedures: [
+      'Uttarabasti (Intra-uterine Herbal Infusion)',
+      'Yoni Prakshalana (Medicated Vaginal Douche)',
+      'Yoni Pichu (Tamponade with Herbal Oil)',
+      'Garbhadhana Samskara (Pre-Conception Detox)',
+      'Sutika Paricharya (Post-Natal Recovery)',
+    ],
+    opdTimings: '09:30 AM - 01:00 PM & 04:30 PM - 07:00 PM',
+    description:
+      'Natural herbal resolution for PCOD, infertility, fibroids, endometriosis, and post-partum rejuvenation.',
+  },
+  {
+    id: 'dept-kaumar',
+    sanskritName: 'Kaumarbhritya',
+    englishName: 'Ayurvedic Pediatrics',
+    shortCode: 'BALA',
+    hodName: 'Dr. Arvind Joshi, MD (Ayu) Kaumarbhritya',
+    activeCasesCount: 12,
+    coreProcedures: [
+      'Suvarnaprashana (Gold Bhasma Drops on Pushya Nakshatra)',
+      'Balabhyanga (Infant Neuromuscular Massage)',
+      'Deepana for Pediatric Inappetence',
+      'Childhood Asthma & Immunity Protocols',
+    ],
+    opdTimings: '10:00 AM - 01:00 PM',
+    description:
+      'Pediatric physical and cognitive development, immune boosting with Swarna Prashana, and natural nutrition.',
+  },
+];

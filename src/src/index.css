@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+
+/* keep the page width constant so the sidebar doesn't jump when a screen is short/long */
+html { overflow-y: scroll; scrollbar-gutter: stable; }
+
+body {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+  @apply bg-[#f3f8f5] text-slate-800 antialiased;
+}
+
+@layer components {
+  .input {
+    @apply w-full rounded-lg border border-slate-200 bg-white py-[15px] pl-11 pr-3 text-sm text-slate-800
+           placeholder:text-slate-400 outline-none transition
+           focus:border-brand-500 focus:ring-2 focus:ring-brand-500/20;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-b from-brand-500 to-brand-700
+           px-5 py-3 text-sm font-semibold text-white shadow-sm transition
+           hover:from-brand-600 hover:to-brand-800 disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  .card { @apply rounded-2xl border border-brand-100/70 bg-white shadow-card; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* ═════════ HMS portal ═════════
+   The hospital's brand colour is injected at runtime (applyDynamicTheme) into these CSS variables. */
+:root {
+  --brand-color: #0f6240;
+  --brand-rgb: 15, 98, 64;
+  --brand-hover: rgba(15, 98, 64, 0.9);
+  --brand-surface: rgba(15, 98, 64, 0.08);
+  --brand-surface-subtle: rgba(15, 98, 64, 0.04);
+  --brand-border: rgba(15, 98, 64, 0.25);
+  --brand-ring: rgba(15, 98, 64, 0.35);
+  --brand-50: 243 247 245;
+  --brand-100: 226 236 232;
+  --brand-200: 193 214 205;
+  --brand-300: 147 184 169;
+  --brand-400: 87 145 121;
+  --brand-500: 49 120 91;
+  --brand-600: 29 107 75;
+  --brand-700: 15 98 64;
+  --brand-800: 12 80 52;
+  --brand-900: 10 63 41;
+  --brand-950: 7 43 28;
+}
+.bg-brand { background-color: var(--brand-color, #0f6240) !important; }
+.text-brand { color: var(--brand-color, #0f6240) !important; }
+.border-brand { border-color: var(--brand-color, #0f6240) !important; }
+.bg-brand-surface { background-color: var(--brand-surface, rgba(15, 98, 64, 0.08)) !important; }
+.bg-brand-subtle { background-color: var(--brand-surface-subtle, rgba(15, 98, 64, 0.04)) !important; }
+.border-brand-light { border-color: var(--brand-border, rgba(15, 98, 64, 0.25)) !important; }
+.hover-bg-brand:hover { background-color: var(--brand-hover, rgba(15, 98, 64, 0.88)) !important; }
+.ring-brand { --tw-ring-color: var(--brand-ring, rgba(15, 98, 64, 0.35)) !important; }
+
+/* The HMS screens were built on Tailwind v4, where a bare `border` is currentColor.
+   In the light dashboard look a bare border should be the soft green-grey line instead. */
+@layer base {
+  .hms-root *, .hms-root ::before, .hms-root ::after { border-color: #dbe7df; }
+}
+
+@layer utilities {
+  @media print {
+    header, aside, button, nav, .no-print { display: none !important; }
+    body { background: #ffffff !important; color: #000000 !important; }
+    .print-only { display: block !important; }
+  }
+}
+
+/* ═════════ Shared dashboard look (applies to all HMS screens) ═════════ */
+.hms-root { background: #f3f8f5; color: #0d2c20; }
+.hms-root h1, .hms-root h2, .hms-root h3 { letter-spacing: -0.01em; }
+.hms-root input, .hms-root select, .hms-root textarea { font-family: inherit; }
+.hms-root input:focus, .hms-root select:focus, .hms-root textarea:focus { border-color: var(--brand-color, #0f6240); }
+/* tables: soft header row like the dashboard tables */
+.hms-root table thead th { background: #f6faf7; }
+/* slim scrollbars (sidebar and tables) */
+.scroll-slim::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-slim::-webkit-scrollbar-thumb { background: rgba(255,255,255,.18); border-radius: 999px; }
+.scroll-light::-webkit-scrollbar { width: 6px; height: 6px; }
+.scroll-light::-webkit-scrollbar-thumb { background: #c3d4c9; border-radius: 999px; }
+/* hero card used at the top of the HMS dashboard (same as the Super Admin welcome card) */
+.hero-card { background: linear-gradient(135deg, rgb(var(--brand-600)) 0%, rgb(var(--brand-800)) 55%, rgb(var(--brand-900)) 100%); }
+
+/* ═════════ Colour range sliders (theme picker) ═════════ */
+.color-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 14px;
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  border: 1px solid rgba(13, 44, 32, 0.12);
+}
+.color-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--brand-color, #0f6240);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(13, 44, 32, 0.25), 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.color-range::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--brand-color, #0f6240);
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 1px rgba(13, 44, 32, 0.25), 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+.color-range::-moz-range-track { background: transparent; }
+.color-range:focus-visible { box-shadow: 0 0 0 3px var(--brand-ring, rgba(15, 98, 64, 0.35)); }
